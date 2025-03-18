@@ -28,6 +28,10 @@ const redirect = () => window.location.href = link
   overflow-x: hidden;
   height: 100%;
   min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 
 .card:hover{
