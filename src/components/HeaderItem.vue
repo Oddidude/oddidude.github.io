@@ -10,9 +10,10 @@
 
 <style scoped>
   header {
-    background-color: darkslategrey;
+    background-color: var(--main-light-green);
     width: 100%;
     height: 20%;
     display: flex;
+    justify-content: center;
   }
 </style>

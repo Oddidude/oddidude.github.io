@@ -1,16 +1,19 @@
 <script setup lang="ts">
-defineProps<{
+const { link } = defineProps<{
   title: string;
-  description: string
+  description: string;
+  link: string;
 }>()
+
+const redirect = () => window.location.href = link
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="redirect">
     <div class="card-header">
       <h2>{{ title }}</h2>
     </div>
-    <div class="body">
+    <div class="card-body">
       <p>{{ description }}</p>
     </div>
   </div>
@@ -19,15 +22,27 @@ defineProps<{
 <style scoped>
 .card {
   background-color: grey;
-  border-radius: 7;
+  border-radius: 6px;
+  padding: 4px 8px;
+  width: 15rem;
+  overflow-x: hidden;
+  height: 100%;
+  min-height: 15rem;
+}
+
+.card:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 5px var(--shadow), -2px -2px 5px var(--shadow);
+  transition: all 0.2s;
 }
 
 .card-header {
-  height: 20%;
-  color: white;
+  color: var(--main-light-green);
 }
 
 .card-body {
-  color: green;
+  color: white;
+  text-overflow: ellipsis;
 }
 </style>
