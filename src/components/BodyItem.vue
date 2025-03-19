@@ -1,15 +1,7 @@
 <script setup lang="ts">
   import CardItem from './CardItem.vue';
 
-  import PhysicsEngine from '../content/PhysicsEngine.json'
-  import SnakeNEAT from '../content/SnakeNEAT.json'
-
-  import { type Content } from '../types'
-  
-  const contentArr: Content[] = [
-    PhysicsEngine,
-    SnakeNEAT
-  ]
+  import * as contentArr from '../content'
 </script>
 
 <template>
