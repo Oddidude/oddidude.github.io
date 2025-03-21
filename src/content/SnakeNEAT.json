@@ -1,5 +1,5 @@
 {
   "title": "SnakeNEAT",
-  "description": "Snake AI innit",
+  "description": "Implementation of the NEAT machine learning algorithm in JavaScript to play the game Snake. Both the game and the algorithm were written from scratch with rendering handled by P4JS",
   "link": "https://oddidude.github.io/SnakeNEAT"
 }

@@ -1,5 +1,5 @@
 {
-  "title": "Phyiscs Engine",
-  "description": "C++ Physics Engine",
+  "title": "Physics Engine",
+  "description": "Physics engine demo built in C++. The physics engine itself was built from scratch whilst rendering was done with SDL2",
   "link": "https://oddidude.github.io/PhysicsEngine"
 }

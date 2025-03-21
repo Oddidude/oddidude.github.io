@@ -47,5 +47,6 @@ defineProps<{
 .card-body {
   color: white;
   text-overflow: ellipsis;
+  text-align: center;
 }
 </style>
