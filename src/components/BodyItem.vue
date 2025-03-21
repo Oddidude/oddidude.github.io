@@ -1,8 +1,12 @@
 <script setup lang="ts">
-  import CardItem from './CardItem.vue';
+  import gsap from 'gsap'
+
+  import CardItem from './CardItem.vue'
+  import AccordionItem from "./AccordionItem.vue"
+
+  import cv from '../assets/Luke_Cheung.pdf'
 
   import * as contentArr from '../content'
-  import gsap from 'gsap';
 
   const onEnter = (el: Element, done: () => void) => {
     gsap.from(el, {
@@ -17,22 +21,23 @@
 </script>
 
 <template>
-    <TransitionGroup
-      appear
-      tag="ul"
-      :css="false"
-      class="body"
-      @enter="onEnter"
+  <AccordionItem header-text="CV">
+    <embed class="cv" :src="cv" type="application/pdf">
+  </AccordionItem>
+  <TransitionGroup
+    tag="ul"
+    class="body"
+    @enter="onEnter"
+  >
+    <li
+      v-for="(content, index) in Object.values(contentArr)"
+      :key="content.title"
+      :data-index="index"
+      @click="redirect(content.link)"
     >
-      <li
-        v-for="(content, index) in Object.values(contentArr)"
-        :key="content.title"
-        :data-index="index"
-        @click="redirect(content.link)"
-      >
-        <CardItem v-bind="content"/>
-      </li>
-    </TransitionGroup>
+      <CardItem v-bind="content"/>
+    </li>
+  </TransitionGroup>
 </template>
 
 <style scoped>
@@ -45,5 +50,10 @@
   margin-top: 1%;
   padding: 0 1%;
   list-style-type: none;
+}
+
+.cv {
+  width: inherit;
+  height: inherit;
 }
 </style>

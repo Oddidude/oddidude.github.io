@@ -10,6 +10,8 @@
 
 <style scoped>
   header {
+    position: sticky;
+    top: 0;
     background-color: var(--main-light-green);
     width: 100%;
     height: 20%;
