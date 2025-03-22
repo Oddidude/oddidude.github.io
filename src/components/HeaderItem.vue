@@ -14,8 +14,9 @@
     top: 0;
     background-color: var(--main-light-green);
     width: 100%;
-    height: 8vw;
+    height: 6rem;
     display: flex;
     justify-content: center;
+    z-index: 100;
   }
 </style>
