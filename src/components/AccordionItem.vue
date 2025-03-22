@@ -28,9 +28,9 @@
 
 <style scoped>
 .accordion {
-  width: 10%;
+  width: 5.5rem;
   height: fit-content;
-  margin-top: .5rem;
+  margin: .5rem 1%;
 }
 
 .accordion-button {
