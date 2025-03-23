@@ -6,13 +6,19 @@
 
   import cv from '../assets/Luke_Cheung.pdf'
 
-  import * as contentArr from '../content'
+  import * as contentObj from '../content'
 
+  const contentArr = Object.values(contentObj)
   const onEnter = (el: Element, done: () => void) => {
+    const index = parseInt((el as HTMLElement).dataset.index!)
+    const delay = index < 11
+      ? index * 0.1
+      : 1 + (1 / index)
+
     gsap.from(el, {
       ease: 'back.out(0.6)',
       transform: 'translateY(1000%)',
-      delay: parseInt((el as HTMLElement).dataset.index!) * 0.1,
+      delay,
       onComplete: done
     })
   }
@@ -25,12 +31,13 @@
     <embed class="cv" :src="cv" type="application/pdf">
   </AccordionItem>
   <TransitionGroup
+    appear
     tag="ul"
     class="body"
     @enter="onEnter"
   >
     <li
-      v-for="(content, index) in Object.values(contentArr)"
+      v-for="(content, index) in contentArr"
       :key="content.title"
       :data-index="index"
       @click="redirect(content.link)"

@@ -24,13 +24,13 @@ defineProps<{
   padding: 4px 8px;
   width: 17rem;
   overflow-x: hidden;
-  height: 100%;
   min-height: 16rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   transition: transform 0.2s;
+  margin-bottom: 1rem;
 }
 
 .card:hover{
